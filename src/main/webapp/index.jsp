@@ -19,47 +19,47 @@
 		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">       
 		<!-- Nice Select CSS -->
-		<link rel="stylesheet" href="./css/nice-select.css">
+		<link rel="stylesheet" href="assets/css/nice-select.css">
 		<!-- Font Awesome CSS -->
-        <link rel="stylesheet" href="./css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 		<!-- icofont CSS -->
-        <link rel="stylesheet" href="./css/icofont.css">
+        <link rel="stylesheet" href="assets/css/icofont.css">
 		<!-- Slicknav -->
-		<link rel="stylesheet" href="./css/slicknav.min.css">
+		<link rel="stylesheet" href="assets/css/slicknav.min.css">
 		<!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="./css/owl-carousel.css">
+        <link rel="stylesheet" href="assets/css/owl-carousel.css">
 		<!-- Datepicker CSS -->
-		<link rel="stylesheet" href="./css/datepicker.css">
+		<link rel="stylesheet" href="assets/css/datepicker.css">
 		<!-- Animate CSS -->
-        <link rel="stylesheet" href="./css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
 		<!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="./css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
 		
 		<!-- Medipro CSS -->
-        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
 		
     </head>
     <body>
 	
 		<!-- Preloader -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="loader-outter"></div>
-                <div class="loader-inner"></div>
+			<div class="preloader">
+				<div class="loader">
+					<div class="loader-outter"></div>
+					<div class="loader-inner"></div>
 
-                <div class="indicator"> 
-                    <svg width="16px" height="12px">
-                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <!-- End Preloader -->
+					<div class="indicator"> 
+						<svg width="16px" height="12px">
+							<polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+							<polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+						</svg>
+					</div>
+				</div>
+			</div>
+		<!--  End Preloader -->
 
 
 		<!-- Header Area -->
@@ -85,22 +85,17 @@
 									<nav class="navigation">
 										<ul class="nav menu">
 											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
-												</ul>
+
 											</li>
+											
 											<li><a href="#">Doctos </a></li>
 											<li><a href="#">Services </a></li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
+											<li><a href="#">Admins <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
+													<li><a href="infermier/index.jsp">nurse</a></li>
 												</ul>
 											</li>
-											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="blog-single.html">Blog Details</a></li>
-												</ul>
-											</li>
+
 											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</nav>
@@ -132,7 +127,7 @@
 									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
-										<a href="#" class="btn">Get Appointment</a>
+										<a href="appointment.jsp" class="btn">Get Appointment</a>
 										<a href="#" class="btn primary">Learn More</a>
 									</div>
 								</div>
@@ -150,8 +145,8 @@
 									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
-										<a href="#" class="btn">Get Appointment</a>
-										
+										<a href="appointment.jsp" class="btn">Get Appointment</a>
+										<a href="#" class="btn primary">About Us</a>
 									</div>
 								</div>
 							</div>
@@ -168,7 +163,7 @@
 									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
-										<a href="#" class="btn">Get Appointment</a>
+										<a href="appointment.jsp" class="btn">Get Appointment</a>
 										<a href="#" class="btn primary">Conatct Now</a>
 									</div>
 								</div>
@@ -180,13 +175,14 @@
 			</div>
 		</section>
 		<!--/ End Slider Area -->
+		<!--/ End Slider Area -->
 		
 		<!-- Start Schedule Area -->
 		<section class="schedule">
 			<div class="container">
 				<div class="schedule-inner">
 					<div class="row">
-						<div class="col-lg-4 col-md-6 col-12 ">
+						<div class="col-lg-4 col-md-6 col-12">
 							<!-- single-schedule -->
 							<div class="single-schedule first">
 								<div class="inner">
@@ -677,44 +673,44 @@
 		<!--/ End Footer Area -->
 		
 		<!-- jquery Min JS -->
-        <script src="js/jquery.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
 		<!-- jquery Migrate JS -->
-		<script src="js/jquery-migrate-3.0.0.js"></script>
+		<script src="assets/js/jquery-migrate-3.0.0.js"></script>
 		<!-- jquery Ui JS -->
-		<script src="js/jquery-ui.min.js"></script>
+		<script src="assets/js/jquery-ui.min.js"></script>
 		<!-- Easing JS -->
-        <script src="js/easing.js"></script>
+        <script src="assets/js/easing.js"></script>
 		<!-- Color JS -->
-		<script src="js/colors.js"></script>
+		<script src="assets/js/colors.js"></script>
 		<!-- Popper JS -->
-		<script src="js/popper.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
 		<!-- Bootstrap Datepicker JS -->
-		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="assets/js/bootstrap-datepicker.js"></script>
 		<!-- Jquery Nav JS -->
-        <script src="js/jquery.nav.js"></script>
+        <script src="assets/js/jquery.nav.js"></script>
 		<!-- Slicknav JS -->
-		<script src="js/slicknav.min.js"></script>
+		<script src="assets/js/slicknav.min.js"></script>
 		<!-- ScrollUp JS -->
-        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="assets/js/jquery.scrollUp.min.js"></script>
 		<!-- Niceselect JS -->
-		<script src="js/niceselect.js"></script>
+		<script src="assets/js/niceselect.js"></script>
 		<!-- Tilt Jquery JS -->
-		<script src="js/tilt.jquery.min.js"></script>
+		<script src="assets/js/tilt.jquery.min.js"></script>
 		<!-- Owl Carousel JS -->
-        <script src="js/owl-carousel.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
 		<!-- counterup JS -->
-		<script src="js/jquery.counterup.min.js"></script>
+		<script src="assets/js/jquery.counterup.min.js"></script>
 		<!-- Steller JS -->
-		<script src="js/steller.js"></script>
+		<script src="assets/js/steller.js"></script>
 		<!-- Wow JS -->
-		<script src="js/wow.min.js"></script>
+		<script src="assets/js/wow.min.js"></script>
 		<!-- Magnific Popup JS -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="assets/js/jquery.magnific-popup.min.js"></script>
 		<!-- Counter Up CDN JS -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 		<!-- Bootstrap JS -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
 		<!-- Main JS -->
-		<script src="js/main.js"></script>
+		<script src="assets/js/main.js"></script>
     </body>
 </html>

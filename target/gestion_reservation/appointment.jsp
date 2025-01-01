@@ -18,31 +18,32 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="./css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <!-- icofont CSS -->
-    <link rel="stylesheet" href="./css/icofont.css">
+    <link rel="stylesheet" href="assets/css/icofont.css">
     <!-- Slicknav -->
-    <link rel="stylesheet" href="./css/slicknav.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="./css/owl-carousel.css">
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
     <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="./css/datepicker.css">
+    <link rel="stylesheet" href="assets/css/datepicker.css">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
     
     <!-- Medipro CSS -->
-    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     
 </head>
 
+<body>
     <section class="appointment">
         <div class="container">
             <div class="row">
@@ -50,13 +51,20 @@
                     <div class="section-title">
                         <h2>We Are Always Ready to Help You. Book An Appointment</h2>
                         <img src="img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                            <% 
+                                String successMessage = request.getParameter("success");
+                                if (successMessage != null) {
+                            %>
+                                <h2 style="color: green;"><%= successMessage %> </h2>
+                            <% 
+                                } 
+                            %>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
-                    <form class="form" action="#">
+                    <form class="form" method="post" action="appointment">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
@@ -73,34 +81,37 @@
                                     <input name="phone" type="text" placeholder="Phone">
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <div class="nice-select form-control wide" tabindex="0"><span class="current">Department</span>
-                                        <ul class="list">
-                                            <li data-value="1" class="option selected ">Department</li>
-                                            <li data-value="2" class="option">Cardiac Clinic</li>
-                                            <li data-value="3" class="option">Neurology</li>
-                                            <li data-value="4" class="option">Dentistry</li>
-                                            <li data-value="5" class="option">Gastroenterology</li>
-                                        </ul>
+                                        <select class="" name="department" id="">
+                                            <option value="null" selected>Department</option>
+                                            <option value="Cardiac Clini">Cardiac Clinic</option>
+                                            <option value="Neurology">Neurology</option>
+                                            <option value="Dentistry">Dentistry</option>
+                                            <option value="Gastroenterology">Gastroenterology</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <div class="nice-select form-control wide" tabindex="0"><span class="current">Doctor</span>
-                                        <ul class="list">
-                                            <li data-value="1" class="option selected ">Doctor</li>
-                                            <li data-value="2" class="option">Dr. Akther Hossain</li>
-                                            <li data-value="3" class="option">Dr. Dery Alex</li>
-                                            <li data-value="4" class="option">Dr. Jovis Karon</li>
-                                        </ul>
+                                        <select class="" name="doctor" id="">
+                                            <option value="null" selected>Doctor</option>
+                                            <option value="Dr. Akther Hossain">Dr. Akther Hossain</option>
+                                            <option value="Dr. Dery Alex">Dr. Dery Alex</option>
+                                            <option value="Dr. Jovis Karon">Dr. Jovis Karon</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+                    
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Date" id="datepicker">
+                                    <input type="date" name="date" placeholder="Date" id="datepicker">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-12">
@@ -117,9 +128,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7 col-md-8 col-12">
-                                <p>( We will be confirm by an Text Message )</p>
-                            </div>
                         </div>
                     </form>
                 </div>
@@ -132,5 +140,7 @@
         </div>
     </section>
     <!-- End Appointment -->
+</body>
+    
 
 </html>
