@@ -87,14 +87,14 @@
 											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
 
 											</li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
+											
+											<li><a href="#">Doctos </a></li>
+											<li><a href="#">Services </a></li>
+											<li><a href="#">Admins <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="infermier/index.jsp">nurse</a></li>
 												</ul>
 											</li>
-											<li><a href="#">Doctos </a></li>
-											<li><a href="#">Services </a></li>
-											
 
 											<li><a href="contact.html">Contact Us</a></li>
 										</ul>

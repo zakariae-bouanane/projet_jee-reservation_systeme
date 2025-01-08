@@ -16,7 +16,7 @@ public class AppointmentDAO{
     private static final String DB_PASSWORD = "";
 
 
-    public void save(Appointment appointment) throws SQLException {
+    public static void save(Appointment appointment) throws SQLException {
         String sql = "INSERT INTO appointments (name, email, phone, department, doctor, date, message) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
