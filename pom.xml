@@ -17,13 +17,18 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>jakarta.servlet</groupId>
-      <artifactId>jakarta.servlet-api</artifactId>
-      <version>5.0.0</version> <!-- Ou la dernière version stable -->
-      <scope>provided</scope>
-    </dependency>
-    
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.33</version>
+      </dependency>
+
+      <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>5.0.0</version> <!-- Or latest stable version -->
+        <scope>provided</scope>
+      </dependency>
 
     
   </dependencies>
