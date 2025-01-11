@@ -10,7 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -29,19 +29,29 @@ public class PatientServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        // Verify patient credentials
-        Patient patient = PatientDAO.verifyPatient(email, password);
+        PatientDAO patientDAO = new PatientDAO() ;
 
+        // Verify patient credentials
+        Patient patient = null;
+		try {
+			patient = patientDAO.verifyPatient(email, password);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         if (patient != null) {
             request.getSession().setAttribute("patient", patient);
-             AppointmentDAO appointmentDAO = new AppointmentDAO();
+            request.getSession().setAttribute("patientEmail", patient.getEmail());
+            AppointmentDAO appointmentDAO = new AppointmentDAO();
             List<Appointment> appointments = appointmentDAO.getAppointmentsByPatientEmail(email);
 
             // Set the appointments in the request scope to pass to the JSP
             request.setAttribute("appointments", appointments);
             request.getRequestDispatcher("/Patient/PatientAppointment.jsp").forward(request, response);
-        } else {
-            request.setAttribute("errorMessage", "Invalid email or password.");
+        } 
+        else 
+        {
             request.getRequestDispatcher("/Patient/Login.jsp").forward(request, response); 
         }
     }

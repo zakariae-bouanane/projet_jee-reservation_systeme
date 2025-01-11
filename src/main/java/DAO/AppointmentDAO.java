@@ -71,6 +71,7 @@ public class AppointmentDAO{
 
             while (resultSet.next()) {
                 Appointment appointment = new Appointment();
+                appointment.setId(resultSet.getInt("id"));
                 appointment.setName(resultSet.getString("name"));
                 appointment.setEmail(resultSet.getString("email"));
                 appointment.setPhone(resultSet.getString("phone"));
@@ -87,4 +88,21 @@ public class AppointmentDAO{
         }
         return appointments;
     }
+
+    public boolean deleteAppointment(int appointmentId) {
+        String query = "DELETE FROM appointments WHERE id = ?";
+    
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+    
+            preparedStatement.setInt(1, appointmentId);
+            int rowsAffected = preparedStatement.executeUpdate();
+    
+            return rowsAffected > 0; // Return true if the deletion was successful
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
 }
