@@ -5,9 +5,26 @@
 	<title>Authentification</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<style>
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>👁</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>👁</text></svg>">
+	
+
+
+
 </head>
 <body>
 	
@@ -21,13 +38,28 @@
 				<img src="img/boy-2027768_1280.png" alt="img">
 				<img src="img/cartoon-2027771_1280.png" alt="img">
 				<h3 class="title">Authentification</h3>
+
+  <!-- Affichage du message d'erreur -->
+                <%
+                    String error = (String) request.getAttribute("error");
+                    if (error != null && !error.isEmpty()) {
+                %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error %>
+                    </div>
+                <% } %>
+
+
+
+
+
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>username</h5>
-           		   		<input type="text" name="username" class="input">
+           		   		<h5>Email</h5>
+           		   		<input type="text" name="email" class="input">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -39,7 +71,6 @@
            		    	<input type="password" name="password" class="input" required>
             	   </div>
             	</div>
-            	<a href="#">mot de passe oublie ?</a>
             	<input type="submit" name="connexion" class="btn" value="se connecter" required>
             </form>
         </div>		
