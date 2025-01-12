@@ -89,7 +89,8 @@
 											</li>
 											
 											<li><a href="#">Doctos </a></li>
-											<li><a href="#">Services </a></li>
+											<li><a href="./LoginPatient">Login </a></li>
+											<li><a href="Patient/Register.jsp">Register </a></li>
 											<li><a href="#">Admins <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="infermier/index.jsp">nurse</a></li>
