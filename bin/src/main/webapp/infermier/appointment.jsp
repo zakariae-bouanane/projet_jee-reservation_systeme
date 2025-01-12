@@ -9,37 +9,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Title -->
-    <title>Reservation systeme</title>
+    <title>Reservation system</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="../img/favicon.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="../assets/css/nice-select.css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     <!-- icofont CSS -->
-    <link rel="stylesheet" href="assets/css/icofont.css">
+    <link rel="stylesheet" href="../assets/css/icofont.css">
     <!-- Slicknav -->
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="../assets/css/slicknav.min.css">
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="../assets/css/owl-carousel.css">
     <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="assets/css/datepicker.css">
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
     <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
     
     <!-- Medipro CSS -->
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
     
 </head>
 
@@ -50,7 +50,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>We Are Always Ready to Help You. Book An Appointment</h2>
-                        <img src="img/section-img.png" alt="#">
+                        <img src="../img/section-img.png" alt="#">
                             <% 
                                 String successMessage = request.getParameter("success");
                                 if (successMessage != null) {
@@ -64,7 +64,26 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
-                    <form class="form" method="post" action="appointment">
+<% 
+            String errorMessage = (String) request.getAttribute("errorMessage");
+            if (errorMessage != null) {
+        %>
+            <div style="color: red; font-size: 14px; padding: 10px; border: 1px solid red; background-color: #f8d7da;">
+                <%= errorMessage %>
+            </div>
+        <% 
+            }
+            String exceptionMessage = (String) request.getAttribute("exceptionMessage");
+            if (exceptionMessage != null) {
+        %>
+            <div style="color: red; font-size: 14px; padding: 10px; border: 1px solid red; background-color: #f8d7da;">
+                <strong>Erreur technique : </strong><%= exceptionMessage %>
+            </div>
+        <% 
+            }
+        %>
+
+                    <form class="form" method="post" action="../InfermierAppointment">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
@@ -133,7 +152,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 ">
                     <div class="appointment-image">
-                        <img src="img/contact-img.png" alt="#">
+                        <img src="../img/contact-img.png" alt="#">
                     </div>
                 </div>
             </div>

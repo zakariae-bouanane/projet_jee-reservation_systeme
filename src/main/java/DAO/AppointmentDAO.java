@@ -11,9 +11,9 @@ import java.util.List;
 import Models.Appointment;
 
 public class AppointmentDAO{
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/jee_gestion_reservation_project";
+    private static final String DB_URL = "jdbc:mysql://localhost:3308/jee_gestion_reservation_project";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+    private static final String DB_PASSWORD = "root123";
 
 
     public static void save(Appointment appointment) throws SQLException {
@@ -58,4 +58,51 @@ public class AppointmentDAO{
 
         return appointments;
     }
+
+    public List<Appointment> getAppointmentsByPatientEmail(String email) {
+        List<Appointment> appointments = new ArrayList<>();
+        String query = "SELECT * FROM appointments WHERE email = ?";
+        
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+             
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Appointment appointment = new Appointment();
+                appointment.setId(resultSet.getInt("id"));
+                appointment.setName(resultSet.getString("name"));
+                appointment.setEmail(resultSet.getString("email"));
+                appointment.setPhone(resultSet.getString("phone"));
+                appointment.setDepartment(resultSet.getString("department")) ;
+                appointment.setDoctor(resultSet.getString("doctor"));;
+                appointment.setDate(resultSet.getString("date"));
+                appointment.setMessage(resultSet.getString("message")); ;
+                
+                appointments.add(appointment);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return appointments;
+    }
+
+    public boolean deleteAppointment(int appointmentId) {
+        String query = "DELETE FROM appointments WHERE id = ?";
+    
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+    
+            preparedStatement.setInt(1, appointmentId);
+            int rowsAffected = preparedStatement.executeUpdate();
+    
+            return rowsAffected > 0; // Return true if the deletion was successful
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
 }

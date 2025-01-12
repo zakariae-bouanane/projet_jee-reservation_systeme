@@ -17,7 +17,6 @@
       <scope>test</scope>
     </dependency>
 
-<<<<<<< HEAD:pom.xml.orig
 <<<<<<< HEAD
     <dependency>
       <groupId>jakarta.servlet</groupId>
@@ -27,8 +26,6 @@
     </dependency>
     
 =======
-=======
->>>>>>> feature/PatientLogin+PatientAppointments:bin/pom.xml
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
@@ -41,10 +38,7 @@
         <version>5.0.0</version> <!-- Or latest stable version -->
         <scope>provided</scope>
       </dependency>
-<<<<<<< HEAD:pom.xml.orig
 >>>>>>> 955fe9207c6b197e4bacd24a576d0c120c7b3d2d
-=======
->>>>>>> feature/PatientLogin+PatientAppointments:bin/pom.xml
 
     
   </dependencies>
