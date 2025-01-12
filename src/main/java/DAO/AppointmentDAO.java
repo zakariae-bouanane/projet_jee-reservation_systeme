@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import Models.Appointment;
 
@@ -59,6 +58,10 @@ public class AppointmentDAO{
         return appointments;
     }
 
+<<<<<<< HEAD
+    public boolean confirmerRendezVous(String appointmentId) {
+        throw new UnsupportedOperationException("Not supported yet.");
+=======
     public List<Appointment> getAppointmentsByPatientEmail(String email) {
         List<Appointment> appointments = new ArrayList<>();
         String query = "SELECT * FROM appointments WHERE email = ?";
@@ -87,6 +90,7 @@ public class AppointmentDAO{
             e.printStackTrace();
         }
         return appointments;
+>>>>>>> ab7afc5571e2b599e01b79d65bc71857507915de
     }
 
     public boolean deleteAppointment(int appointmentId) {
@@ -98,11 +102,28 @@ public class AppointmentDAO{
             preparedStatement.setInt(1, appointmentId);
             int rowsAffected = preparedStatement.executeUpdate();
     
+<<<<<<< HEAD
+            return rowsAffected > 0; 
+=======
             return rowsAffected > 0; // Return true if the deletion was successful
+>>>>>>> ab7afc5571e2b599e01b79d65bc71857507915de
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
+<<<<<<< HEAD
+}
+     public boolean confirmerrendezVous(String appointmentId) throws SQLException {
+      String sql = "UPDATE appointments SET is_confirmed = true WHERE id = ?";
+       try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+       PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setString(1, appointmentId);
+        return stmt.executeUpdate() > 0;
+    }
+}
+
+=======
     }
     
+>>>>>>> ab7afc5571e2b599e01b79d65bc71857507915de
 }

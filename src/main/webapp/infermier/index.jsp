@@ -134,9 +134,16 @@
                             <td><%= appointment.getDate() %></td>
                             <td><%= appointment.getMessage() %></td>
                             <td>
-                                <a class="btn btn-danger" href="delete_appointment?id=<%= appointment.getId() %>">Delete</a>
-                                <a class="btn btn-warning" href="edit_appointment?id=<%= appointment.getId() %>">Edit</a>
-                            </td>
+                                <a class="btn btn-danger" href="    DeleteAppointmentInfermier?id=<%= appointment.getId() %>" onclick="return confirm('Est-ce-que vous etes sur de supprimer ce rendez-vous ??');">Supprimer</a>
+                                <a class="btn btn-warning" href="ConfirmationInfermierServlet?id=<%= appointment.getId() %>" onclick="return confirm('Voulez-vous vraiment confirmer ce rendez-vous ?');">Confirmer</a>
+                                <td>
+                                    <% if (!appointment.isConfirmed()) { %>
+                                        <a class="btn btn-warning" href="ConfirmationInfermierServlet?id=<%= appointment.getId() %>" onclick="return confirm('Voulez-vous vraiment confirmer ce rendez-vous ?');">Confirmer</a>
+                                    <% } else { %>
+                                        <button class="btn btn-success" disabled>Confirmé</button>
+                                    <% } %>
+                                </td>
+                                
                         </tr>
                     <%
                         }
