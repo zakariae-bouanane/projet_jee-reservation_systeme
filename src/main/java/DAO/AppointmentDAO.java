@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import Models.Appointment;
 
@@ -58,4 +57,33 @@ public class AppointmentDAO{
 
         return appointments;
     }
+
+    public boolean confirmerRendezVous(String appointmentId) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public boolean deleteAppointment(int appointmentId) {
+        String query = "DELETE FROM appointments WHERE id = ?";
+    
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+    
+            preparedStatement.setInt(1, appointmentId);
+            int rowsAffected = preparedStatement.executeUpdate();
+    
+            return rowsAffected > 0; 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+}
+     public boolean confirmerrendezVous(String appointmentId) throws SQLException {
+      String sql = "UPDATE appointments SET is_confirmed = true WHERE id = ?";
+       try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+       PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setString(1, appointmentId);
+        return stmt.executeUpdate() > 0;
+    }
+}
+
 }

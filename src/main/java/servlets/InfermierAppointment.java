@@ -2,7 +2,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,7 +13,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/InfermierAppointment")
 public class InfermierAppointment extends HttpServlet{
@@ -30,7 +28,7 @@ public class InfermierAppointment extends HttpServlet{
        
         String action = request.getParameter("action");
         if ("add".equals(action)) {
-            // Rediriger vers la page appointment.jsp
+           
             response.sendRedirect("infermier/appointment.jsp");
         } else {
             // Autres actions, ou afficher des informations si nécessaire
